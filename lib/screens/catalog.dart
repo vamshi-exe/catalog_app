@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _currentIndex = 0;
       }
       _pageController.animateToPage(_currentIndex,
-          duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+          duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
     });
   }
 
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // width: 38.0,
             width: _currentIndex == index ? 35 : 8,
             height: 8.0,
-            margin: EdgeInsets.symmetric(horizontal: 4.0),
+            margin: const EdgeInsets.symmetric(horizontal: 4.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               shape: BoxShape.rectangle,
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: greyColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
               Padding(
@@ -191,8 +191,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   double value = 1.0;
                                   if (_pageController.position.haveDimensions) {
                                     value = (_pageController.page! - index);
-                                    value = (1 - (value.abs() * 0.3))
-                                        .clamp(0.0, 1.0);
+                                    value = (1 - (value.abs() * 0.35))
+                                        .clamp(0.5, 0.9);
                                   }
                                   return Center(
                                     child: SizedBox(
@@ -211,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10),
                                   child: Container(
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(250))),
                                     child: Image.network(
@@ -227,11 +227,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               _buildIndicator(),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Padding(
@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -255,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
@@ -268,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
@@ -292,7 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
